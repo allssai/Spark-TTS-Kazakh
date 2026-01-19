@@ -1,0 +1,51 @@
+base_model: pretrained_models/Spark-TTS-0.5B/LLM
+trust_remote_code: true
+strict: false
+
+datasets:
+  - path: json
+    # 指向你刚刚生成的 94.7万条动态加权数据集
+    data_files: ["training_data/kazakh_repair_dynamic.jsonl"]
+    type: completion
+    
+dataset_prepared_path:
+val_set_size: 0.01
+# 建议更换输出目录，防止覆盖之前的 19,000 步记录，方便回滚
+output_dir: ./outputs/repair_out
+
+sequence_len: 2048
+sample_packing: true
+eval_sample_packing: true
+pad_to_sequence_len: true
+
+# 核心续训配置
+resume_from_checkpoint: ./outputs/out/checkpoint-19000
+
+# 修复阶段参数微调
+# 总步数 = 19,000 (当前) + 3,000 (修复训练)
+max_steps: 22000
+# 降低学习率，从 1e-5 降至 3e-6，进行精细修复
+learning_rate: 3e-6
+# 缩短保存间隔，每 100 步保存一次，方便挑选发音最准的那个点
+save_steps: 100
+eval_steps: 100
+
+gradient_accumulation_steps: 8
+micro_batch_size: 2
+num_epochs: 1
+optimizer: adamw_torch_fused
+lr_scheduler: cosine
+
+train_on_inputs: false
+group_by_length: false
+bf16: auto
+tf32: true
+
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+
+logging_steps: 10
+flash_attention: true
+warmup_steps: 50
+weight_decay: 0.0

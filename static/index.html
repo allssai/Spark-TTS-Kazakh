@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazakh-TTS-Spark</title>
+    <link rel="stylesheet" href="style.css?v=1.2">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="lang-switcher">
+        <span class="lang-icon">🌐</span>
+        <button class="lang-btn active" data-lang="kk">KK</button>
+        <button class="lang-btn" data-lang="zh">ZH</button>
+    </div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="sparkle">✨</span>
+                <h1>Kazakh-TTS <span>Spark</span></h1>
+            </div>
+            <p class="subtitle" data-i18n="subtitle">Қазақ тіліндегі мәтінді жоғары сапалы дыбысқа айналдыру құралы</p>
+        </header>
+
+        <main>
+            <div class="glass-card main-card">
+                <div class="input-section">
+                    <label for="text-input" data-i18n="input_label">Мәтінді енгізіңіз:</label>
+                    <textarea id="text-input" data-i18n-placeholder="input_placeholder"
+                        placeholder="Осы жерге қазақша мәтінді енгізіңіз..."></textarea>
+                    <div class="char-count"><span id="current-chars">0</span> / 2000</div>
+                </div>
+
+                <div class="mode-section" style="margin-bottom: 24px;">
+                    <label data-i18n="script_type">Жазу түрі (Script Type)</label>
+                    <div class="segmented-control">
+                        <input type="radio" name="script" value="cyrillic" id="script-cyrillic" checked>
+                        <label for="script-cyrillic" data-i18n="script_cyrillic">Кририллица (Cyrillic)</label>
+                        <input type="radio" name="script" value="arabic" id="script-arabic">
+                        <label for="script-arabic" data-i18n="script_arabic">Төте жазу (Arabic)</label>
+                    </div>
+                </div>
+
+                <div class="mode-section" style="margin-bottom: 24px;">
+                    <label data-i18n="inference_mode">Инференция режимі (Inference Mode)</label>
+                    <div class="segmented-control">
+                        <input type="radio" name="mode" value="direct" id="mode-direct" checked>
+                        <label for="mode-direct" data-i18n="mode_direct">Тікелей</label>
+                        <input type="radio" name="mode" value="segmented" id="mode-segmented">
+                        <label for="mode-segmented" data-i18n="mode_segmented">Сегменттелген</label>
+                    </div>
+                </div>
+
+                <div class="cloning-section">
+                    <button class="accordion-header" id="toggle-cloning">
+                        <span data-i18n="voice_cloning">🎙️ Дауысты клондау (Voice Cloning)</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content" id="cloning-content">
+                        <div class="upload-area">
+                            <input type="file" id="prompt-speech" accept="audio/*">
+                            <label for="prompt-speech" id="file-label">
+                                <div class="upload-icon">⬆️</div>
+                                <span data-i18n="upload_label">Аудио файлды таңдаңыз немесе осында сүйреңіз</span>
+                            </label>
+                        </div>
+                        <div class="input-group">
+                            <label for="prompt-text" data-i18n="prompt_text_label">Аудио транскрипциясы (міндетті
+                                емес):</label>
+                            <input type="text" id="prompt-text" data-i18n-placeholder="prompt_text_placeholder"
+                                placeholder="Аудио файлдағы мәтінді енгізіңіз...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <button id="generate-btn" class="primary-btn" data-i18n="generate_btn">Генерациялау</button>
+                </div>
+            </div>
+
+            <div class="results-container" id="results-container">
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Spark-TTS Kazakh. Advanced Agentic Coding Team. | 创作者：AllisAI</p>
+        </footer>
+    </div>
+
+    <div id="loader" class="loader-overlay hidden">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p id="loader-text" data-i18n="loader_text">Дыбыс дайындалуда...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
