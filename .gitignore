@@ -1,0 +1,157 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyTorch
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Model files (too large for git)
+pretrained_models/
+*.bin
+models/*.bin
+models/*.safetensors
+
+# Generated audio files
+static/outputs/
+static/*.wav
+static/*.mp3
+test_cloning_results/
+outputs/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Logs and debugging
+*.log
+debug_output.txt
+*.out
+
+# MLflow
+mlruns/
+last_run_prepared/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Documentation builds
+docs/_build/
+site/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files
+*.bak
+*.backup
+*~
+_backup/
+
+# Portable package (not for GitHub)
+Kazakh_Spark_TTS_Portable/
+
+# Internal documentation (not for GitHub)
+README_GITHUB.md
+README_HUGGINGFACE.md
+HUGGINGFACE_MODEL_CARD.md
+HUGGINGFACE_UPLOAD_GUIDE.md
+HUGGINGFACE_CHECKLIST.md
+DEPLOYMENT_GUIDE.md
+UPLOAD_INSTRUCTIONS.md
+GITHUB_READY.md
+CLEANUP_SUMMARY.md
+FINAL_SUMMARY.md
+METRICS_NOTE.md
+TERMINOLOGY_UPDATE.md
+README_COMPARISON.md
+GITHUB_UPLOAD_FINAL_CHECKLIST.md
+项目清理计划.md
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Large data files
+data/
+datasets/
+training_data/*.wav
+training_data/*.mp3
+training_data/*.flac
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Local configuration
+config.local.yaml
+config.local.json
+local_settings.py
+training_data/kazakh_enhanced_v3.jsonl

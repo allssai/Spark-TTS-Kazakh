@@ -1,0 +1,14 @@
+.git
+.gitignore
+venv
+__pycache__
+*.pyc
+pretrained_models
+static/outputs
+temp
+*.wav
+*.mp3
+diagnostic.py
+shape_debug.py
+test_api.py
+.gemini
