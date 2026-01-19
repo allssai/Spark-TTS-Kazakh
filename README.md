@@ -1,4 +1,4 @@
-# Kazakh Spark-TTS Application
+# Spark-TTS-Kazakh  Application
 
 [English](#english) | [中文](#中文) | [Қазақша](#қазақша)
 
@@ -23,7 +23,7 @@ Production-ready application for Kazakh text-to-speech synthesis with voice clon
 
 Download the fine-tuned model from Hugging Face:
 
-👉 **[YOUR_USERNAME/kazakh-spark-tts](https://huggingface.co/YOUR_USERNAME/kazakh-spark-tts)**
+👉 **[[ErnarBahat/kazakh-tts-spark](https://huggingface.co/ErnarBahat/Spark-TTS-Kazakh)])**
 
 ### 🚀 Quick Start
 
@@ -453,3 +453,4 @@ Apache License 2.0 - толық ақпарат үшін [LICENSE](LICENSE) фа�
 **Version**: 1.0.0  
 **Last Updated**: 2026-01-19  
 **Status**: 🟢 Production Ready
+
