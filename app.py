@@ -259,13 +259,13 @@ if __name__ == "__main__":
     import webbrowser
     import threading
     
-    # 延迟打开浏览器，等待服务器启动
+    
     def open_browser():
         import time
-        time.sleep(2)  # 等待2秒让服务器启动
+        time.sleep(2) 
         webbrowser.open("http://localhost:8002")
     
-    # 在后台线程中打开浏览器
+    
     threading.Thread(target=open_browser, daemon=True).start()
     
     print("\n" + "="*50)
@@ -277,3 +277,4 @@ if __name__ == "__main__":
     print("="*50 + "\n")
     
     uvicorn.run(app, host="0.0.0.0", port=8002)
+
